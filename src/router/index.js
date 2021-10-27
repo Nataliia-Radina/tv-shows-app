@@ -25,7 +25,6 @@ const routes = [
 ]
 
 const router = new VueRouter({
-	mode: 'history',
 	base: '/tv-shows-app/',
 	routes
 })

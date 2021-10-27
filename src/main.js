@@ -7,6 +7,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', () => {
+		navigator.serviceWorker.register('/tv-shows-app/sw.js')
+	})
+}
+
 library.add(faStar)
 library.add(faSearch)
 
