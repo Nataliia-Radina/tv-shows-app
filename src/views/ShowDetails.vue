@@ -6,8 +6,8 @@
       <ResponsiveImage
         :src-set="showDetails.image || {}"
         :title="showDetails.name"
-        responsive>
-      </ResponsiveImage>
+        responsive
+      />
 
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="show--summary" v-html="showDetails.summary" />

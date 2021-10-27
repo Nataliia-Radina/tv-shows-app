@@ -26,7 +26,7 @@ const routes = [
 
 const router = new VueRouter({
 	mode: 'history',
-	base: '/abn-tv',
+	base: '/tv-shows-app/',
 	routes
 })
 

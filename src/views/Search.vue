@@ -1,14 +1,15 @@
 <template>
-  <main class="grid--container--cards--list">
+  <main>
     <p v-if="!searchResults.length"> No results found for <b>{{ searchQuery }}</b></p>
-    <Card
-      v-else
-      v-for="show in searchResults"
-      :key="show.show.id"
-      :title="show.show.name"
-      :src-set="show.show.image || {}"
-      @cardClicked="$_navigateToDetailsPage(show.show.id)"
-    />
+    <div v-else class="grid--container--cards--list">
+      <Card
+        v-for="show in searchResults"
+        :key="show.show.id"
+        :title="show.show.name"
+        :src-set="show.show.image || {}"
+        @cardClicked="$_navigateToDetailsPage(show.show.id)"
+      />
+    </div>
   </main>
 </template>
 
