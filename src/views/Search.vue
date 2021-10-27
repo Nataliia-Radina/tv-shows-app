@@ -1,6 +1,6 @@
 <template>
   <main>
-    <p v-if="!searchResults.length"> No results found for <b>{{ searchQuery }}</b></p>
+    <p v-if="!searchResults.length"> No results found <b>{{ searchQuery }}</b></p>
     <div v-else class="grid--container--cards--list">
       <Card
         v-for="show in searchResults"
@@ -16,7 +16,7 @@
 <script>
   import Card from '@/components/Card.vue'
   import Navigation from '@/shared/Navigation'
-  import { mapState } from 'vuex'
+  import { mapState, mapActions } from 'vuex'
 
   export default {
     name: 'Search',
@@ -26,6 +26,17 @@
     mixins: [Navigation],
     computed: {
       ...mapState(['searchResults', 'searchQuery'])
+    },
+    created () {
+      if (!this.searchQuery) {
+        this.$router.push('/')
+      }
+    },
+    beforeDestroy () {
+      this.updateSearchQuery('')
+    },
+    methods: {
+      ...mapActions(['updateSearchQuery'])
     }
   }
 </script>

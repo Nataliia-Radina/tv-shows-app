@@ -40,6 +40,9 @@ export const mutations = {
 	setPreviousUrl (state, url) {
 		state.previousUrl = url
 	},
+	setSearchQuery (state, query) {
+		state.searchQuery = query
+	},
 	setError (state, data) {
 		state.hasError = data
 	}
@@ -71,7 +74,7 @@ export default new Vuex.Store({
 	actions,
 	plugins: [
 		createPersistedState({
-			paths: ['previousUrl', 'searchQuery']
+			paths: ['previousUrl']
 		})
 	]
 })

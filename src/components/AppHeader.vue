@@ -25,11 +25,6 @@
     computed: {
       ...mapState(['searchResults', 'searchQuery', 'hasError', 'previousUrl'])
     },
-    created () {
-      if (this.searchQuery) {
-        this.searchShowsByQuery(this.searchQuery)
-      }
-    },
     methods: {
       searchShowsByQuery (val) {
         if (val) {

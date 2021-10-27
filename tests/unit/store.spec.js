@@ -40,15 +40,22 @@ const showDetails = {
 describe('mutations', () => {
     it('setSearchResults should set correct data', () => {
         const query = 'some show name'
-        mutations.setSearchResults(state, { data: searchShows, options: query})
+
+        mutations.setSearchResults(state, { data: searchShows, options: query })
         expect(state.searchQuery).toEqual(query)
         expect(state.searchResults).toEqual(searchShows)
     })
 
     it('setShowDetails should set correct data', () => {
-        mutations.setShowDetails(state, showDetails)
+        mutations.setShowDetails(state, { data: showDetails })
         expect(state.showDetails).toEqual(showDetails)
 
+    })
+
+    it('setSearchQuery should set correct data', () => {
+        const query = 'some show name'
+        mutations.setSearchQuery(state, query)
+        expect(state.searchQuery).toEqual(query)
     })
 
     it('setPreviousUrl should set correct data', () => {
