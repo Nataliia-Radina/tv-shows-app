@@ -33,7 +33,7 @@
           v-for="person in showDetails._embedded.cast"
           :key="person.id"
           :title="getCardTitle(person.person.name, person.character.name)"
-          :src-set="person.person.image"
+          :src-set="person.person.image || {}"
         />
       </div>
     </section>

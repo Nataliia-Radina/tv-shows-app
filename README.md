@@ -44,3 +44,5 @@ vuex to manage state
 vue-router for navigation
 
 node -v 12.2.0
+
+The app is deployed to [https://nataliia-radina.github.io/tv-shows-app/]
