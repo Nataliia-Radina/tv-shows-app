@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expect to render Card component 1`] = `
+<div class="card">
+  <responsiveimage-stub srcset="[object Object]" alt="Emilia Clarke as Daenerys Targaryen"></responsiveimage-stub>
+  <p class="card--title">
+    Emilia Clarke as Daenerys Targaryen
+  </p>
+  <!---->
+</div>
+`;

@@ -1,32 +1,66 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="app">
+    <AppHeader />
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import AppHeader from '@/components/AppHeader.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  export default {
+    name: 'App',
+    components: {
+      AppHeader
     }
   }
-}
+</script>
+
+<style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #e5e5e5;
+  }
+  p {
+    margin: 0
+  }
+  img {
+    border-radius: 6px;
+    width: 100%;
+  }
+  .app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 64px 25px;
+    @media (min-width: 768px) {
+      padding: 64px 50px;
+    }
+  }
+
+  .show--list .v-hl-container[data-v-45080727] {
+    padding: 30px 0;
+  }
+
+  .grid--container--cards--list {
+    display: grid;
+    padding-top: 30px;
+    gap: 30px 3px;
+    grid-template-columns: 1fr 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    @media (min-width: 1280px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .card {
+      margin: 3px;
+    }
+  }
+
 </style>
